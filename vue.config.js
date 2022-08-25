@@ -31,7 +31,13 @@ module.exports = defineConfig({
   configureWebpack: {
     plugins: [dynamicThemePlugin()]
   },
-
+  devServer: {
+    proxy: {
+      '/api': {
+        target: 'http://47.243.206.184:8090'
+      }
+    }
+  },
   css: {
     loaderOptions: {
       less: {

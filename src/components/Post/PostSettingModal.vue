@@ -43,6 +43,9 @@
             <a-form-item label="标签">
               <TagSelect v-model="form.model.tagIds" />
             </a-form-item>
+            <a-form-item label="权重">
+              <a-input v-model="form.model.weight" />
+            </a-form-item>
             <a-form-item label="摘要">
               <a-input
                 v-model="form.model.summary"
