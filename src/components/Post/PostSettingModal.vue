@@ -46,6 +46,9 @@
             <a-form-item label="权重">
               <a-input v-model="form.model.weight" />
             </a-form-item>
+            <a-form-item label="链接">
+              <a-input v-model="form.model.link" />
+            </a-form-item>
             <a-form-item label="摘要">
               <a-input
                 v-model="form.model.summary"
