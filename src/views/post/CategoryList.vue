@@ -19,6 +19,9 @@
             <a-form-model-item help="* 分类密码" label="密码：" prop="password">
               <a-input-password v-model="form.model.password" autocomplete="new-password" />
             </a-form-model-item>
+            <a-form-model-item help="* 排序" label="权重：" prop="priority">
+              <a-input v-model="form.model.priority" />
+            </a-form-model-item>
             <a-form-model-item help="* 分类描述，需要主题支持" label="描述：" prop="description">
               <a-input v-model="form.model.description" :autoSize="{ minRows: 3 }" type="textarea" />
             </a-form-model-item>
