@@ -49,6 +49,9 @@
             <a-form-item label="链接">
               <a-input v-model="form.model.url" />
             </a-form-item>
+            <a-form-item label="链接(link)">
+              <a-input v-model="form.model.link" />
+            </a-form-item>
             <a-form-item label="摘要">
               <a-input
                 v-model="form.model.summary"
