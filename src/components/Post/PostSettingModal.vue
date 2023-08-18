@@ -52,6 +52,9 @@
             <a-form-item label="链接(link)">
               <a-input v-model="form.model.link" />
             </a-form-item>
+            <a-form-item label="区块链">
+              <BlockChainSelect v-model="form.model.blockChain" />
+            </a-form-item>
             <a-form-item label="摘要">
               <a-input
                 v-model="form.model.summary"
@@ -180,6 +183,7 @@
 // components
 import CategoryTree from '../Category/CategoryTree'
 import TagSelect from '../Tag/TagSelect'
+import BlockChainSelect from '../Tag/BlockChainSelect'
 import MetaEditor from '@/components/Post/MetaEditor'
 import CategoryCreateModal from '@/components/Category/CategoryCreateModal'
 
@@ -199,6 +203,7 @@ export default {
   components: {
     CategoryTree,
     TagSelect,
+    BlockChainSelect,
     MetaEditor,
     CategoryCreateModal
   },

@@ -34,7 +34,12 @@ module.exports = defineConfig({
   devServer: {
     proxy: {
       '/api': {
-        target: 'http://47.243.206.184:8090'
+        // target: 'http://47.243.206.184:8090',
+        target: 'https://optest.astrox.app'
+      },
+      '/oper-admin': {
+        // target: 'http://47.243.206.184:8090',
+        target: 'https://optest.astrox.app/oper-admin'
       }
     }
   },
