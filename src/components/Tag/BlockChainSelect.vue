@@ -42,6 +42,7 @@ export default {
   watch: {
     tags(newValue) {
       if (newValue) {
+        console.log('tags', this.tagIds)
         this.selectedTagNames = this.tagIds.map(tagId => this.tagIdMap[tagId].name)
       }
     },
@@ -50,6 +51,7 @@ export default {
         if (!this.tags.length) {
           return
         }
+        console.log('tagsIds', this.tagIds)
         this.selectedTagNames = newValue.map(tagId => this.tagIdMap[tagId].name)
       },
       deep: true
@@ -75,22 +77,22 @@ export default {
     handleListTags(callback) {
       console.log('blockchain handleListTags')
       this.tags = [
-        { name: 'IC', value: 'IC' },
-        { name: 'Ethereum', value: 'homestead' },
-        // { name: 'Goerli', value: 'goerli', test: true },
-        { name: 'Polygon', value: 'matic' },
-        // { name: 'Polygon Mumbai', value: 'maticmum', test: true },
-        { name: 'BNB Smart Chain', value: 'bsc' },
-        // { name: 'Binance Smart Chain Testnet', value: 'bsc-testnet', test: true },
-        { name: 'Arbitrum One', value: 'arbitrum' },
-        // { name: 'Arbitrum Goerli', value: 'arbitrum-goerli', test: true },
-        { name: 'Avalanche', value: 'avalanche' },
-        // { name: 'Avalanche Fuji', value: 'avalanche-fuji', test: true },
-        { name: 'Optimism', value: 'optimism' },
-        { name: 'Linea', value: 'linea' },
-        { name: 'zkSync Era', value: 'zksync' },
-        { name: 'Base Mainnet', value: 'base-mainnet' }
-        // { name: 'Optimism-Goerli', value: 'optimism-goerli', test: true },
+        { name: 'IC', id: 'IC' },
+        { name: 'Ethereum', id: 'homestead' },
+        // { name: 'Goerli', id: 'goerli', test: true },
+        { name: 'Polygon', id: 'matic' },
+        // { name: 'Polygon Mumbai', id: 'maticmum', test: true },
+        { name: 'BNB Smart Chain', id: 'bsc' },
+        // { name: 'Binance Smart Chain Testnet', id: 'bsc-testnet', test: true },
+        { name: 'Arbitrum One', id: 'arbitrum' },
+        // { name: 'Arbitrum Goerli', id: 'arbitrum-goerli', test: true },
+        { name: 'Avalanche', id: 'avalanche' },
+        // { name: 'Avalanche Fuji', id: 'avalanche-fuji', test: true },
+        { name: 'Optimism', id: 'optimism' },
+        { name: 'Linea', id: 'linea' },
+        { name: 'zkSync Era', id: 'zksync' },
+        { name: 'Base Mainnet', id: 'base-mainnet' }
+        // { name: 'Optimism-Goerli', id: 'optimism-goerli', test: true },
         // { name: 'localhost', value: 'localhost', test: true }
       ]
       if (callback) {
@@ -116,7 +118,7 @@ export default {
       this.$log.debug('Tag names to create', tagNamesToCreate)
 
       if (!tagNamesToCreate.length) {
-        const tagIds = this.selectedTagNames.map(tagName => this.tagNameMap[tagName].value)
+        const tagIds = this.selectedTagNames.map(tagName => this.tagNameMap[tagName].id)
         this.$emit('change', tagIds)
         return
       }
@@ -128,7 +130,7 @@ export default {
           this.handleListTags(() => {
             this.$log.debug('Tag name map', this.tagNameMap)
             // Get all tag id
-            const tagIds = this.selectedTagNames.map(tagName => this.tagNameMap[tagName].value)
+            const tagIds = this.selectedTagNames.map(tagName => this.tagNameMap[tagName].id)
             this.$emit('change', tagIds)
           })
         })
