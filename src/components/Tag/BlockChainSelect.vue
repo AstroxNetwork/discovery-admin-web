@@ -86,7 +86,10 @@ export default {
         // { name: 'Arbitrum Goerli', value: 'arbitrum-goerli', test: true },
         { name: 'Avalanche', value: 'avalanche' },
         // { name: 'Avalanche Fuji', value: 'avalanche-fuji', test: true },
-        { name: 'Optimism', value: 'optimism' }
+        { name: 'Optimism', value: 'optimism' },
+        { name: 'Linea', value: 'linea' },
+        { name: 'zkSync Era', value: 'zksync' },
+        { name: 'Base Mainnet', value: 'base-mainnet' }
         // { name: 'Optimism-Goerli', value: 'optimism-goerli', test: true },
         // { name: 'localhost', value: 'localhost', test: true }
       ]
