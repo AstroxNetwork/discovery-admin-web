@@ -40,6 +40,9 @@
                 <a-button type="dashed" @click="categoryCreateModalVisible = true">新增</a-button>
               </a-space>
             </a-form-item>
+            <a-form-item label="miniDappId">
+              <a-input v-model="form.model.miniDappId" />
+            </a-form-item>
             <a-form-item label="标签">
               <TagSelect v-model="form.model.tagIds" />
             </a-form-item>
